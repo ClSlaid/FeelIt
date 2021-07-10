@@ -4,8 +4,9 @@ class Pwa {
         this.scope = self;
         const Version = '1.0.0';
         this.CACHE_VERSION = Version;
-        this.BASE_CACHE_FILES = ['/css/home.min.css', '/css/page.min.css', '/js/themes.min.js', '/site.webmanifest', '/404.html'];
+        this.BASE_CACHE_FILES = ['/css/home.min.css', '/css/page.min.css', '/js/themes.min.js', '/site.webmanifest', '/404.html', '/offline/'];
         this.NOT_FOUND_PAGE = '/404.html';
+        this.OFFLINE_PAGE = '/offline/';
         this.CACHE_NAME = `content-v${this.CACHE_VERSION}`;
         this.MAX_TTL = 86400;
         this.TTL_EXCEPTIONS = ["webp", "jpg", "jpeg", "png", "gif", "mp4"];
@@ -33,8 +34,8 @@ class Pwa {
 
     async installServiceWorker() {
         try {
-            await caches.open(this.CACHE_NAME).then((cache) => {
                 return cache.addAll(this.BASE_CACHE_FILES);
+            await caches.open(this.CACHE_NAME).then((cache) => {
             }, err => console.error(`Error with ${this.CACHE_NAME}`, err));
             return this.scope.skipWaiting();
         }
@@ -133,6 +134,7 @@ class Pwa {
                         }
                     }).catch(err => {
                         console.error(`Error fetching ${event.request.url} resulted in offline`, err);
+                        return cache.match(this.OFFLINE_PAGE);
                     })
                 }));
         });

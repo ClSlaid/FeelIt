@@ -148,6 +148,11 @@ other = "Không tìm thấy trang"
 other = "Trang bạn đang tìm kiếm không tồn tại. Xin lỗi."
 # === 404.html ===
 
+# === Offline Page ===
+[pageOffline]
+other = "You're offline. Check your internet connection."
+# === Offline Page ===
+
 # === shortcodes/admonition.html ===
 [note]
 other = "Ghi chú"
