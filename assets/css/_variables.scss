@@ -2,11 +2,14 @@
 // Variables
 // ==============================
 
+@import url("https://fonts.loli.net/css2?family=Noto+Serif+SC&display=swap");
+@import url("https://fonts.loli.net/css2?family=Fira+Code&display=swap");
+
 // ========== Global ========== //
 // Font and Line Height
 $global-font-family: system-ui, -apple-system, BlinkMacSystemFont, PingFang SC, Microsoft YaHei UI, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial, sans-serif !default;
 $global-font-size: 18px;
-$global-font-weight: 397;
+$global-font-weight: 390;
 $global-line-height: 1.8rem;
 
 // Color of the background
@@ -78,6 +81,8 @@ $search-background-color-dark: #363636 !default;
 // ========== Header ========== //
 
 // ========== Single Content ========== //
+// content font family
+$single-font-family: "Noto Serif CJK SC", $global-font-family !default;
 // Font size of the TOC
 $toc-title-font-size: 1rem !default;
 $toc-content-font-size: .9rem !default;
@@ -129,7 +134,7 @@ $code-info-color-dark: #b1b0b0 !default;
 $code-font-size: .875rem !default;
 
 // Font family of the code
-$code-font-family: "JetBrains Mono", "Source Code Pro", Menlo, Consolas, Monaco, monospace, $global-font-family !default;
+$code-font-family: "Fira Code", "Source Code Pro", Menlo, Consolas, Monaco, monospace, $global-font-family !default;
 
 // Code type map
 $code-type-map: (
