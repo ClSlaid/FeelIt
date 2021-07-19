@@ -61,4 +61,6 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: {{ "/sitemap.xml" | absLangURL }}
+# Sitemap: {{ "/sitemap.xml" | absLangURL }}
+Sitemap: {{ "/en/sitemap.xml" | absURL }}
+Sitemap: {{ "/zh-cn/sitemap.xml" | absURL }}
