@@ -2,8 +2,7 @@
 // Variables
 // ==============================
 
-@import url("https://fonts.loli.net/css2?family=Noto+Serif+SC&display=swap");
-@import url("https://fonts.loli.net/css2?family=Fira+Code&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Noto+Serif+SC&display=swap");
 
 // ========== Global ========== //
 // Font and Line Height
@@ -82,7 +81,7 @@ $search-background-color-dark: #363636 !default;
 
 // ========== Single Content ========== //
 // content font family
-$single-font-family: "Noto Serif CJK SC", $global-font-family !default;
+$single-font-family: "Noto Serif SC", $global-font-family !default;
 // Font size of the TOC
 $toc-title-font-size: 1rem !default;
 $toc-content-font-size: .9rem !default;
