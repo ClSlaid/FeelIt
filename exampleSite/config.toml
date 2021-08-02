@@ -451,7 +451,7 @@ ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstok
     # whether to enable PWA support
     enable = true
     # service-worker version
-    version = "1.0.0"
+    version = "1.0.1"
 
   # Header config
   # 页面头部导航栏配置
@@ -1039,3 +1039,10 @@ ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstok
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
   taxonomyTerm = ["HTML"]
+
+# Minify config
+[minify]
+  [minify.tdewolff]
+    [minify.tdewolff.html]
+      # ignore the whitespace as we don't have text around the span tag (https://github.com/khusika/FeelIt/issues/40)
+      keepWhitespace = false

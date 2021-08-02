@@ -226,7 +226,7 @@ Please open the code block below to view the complete sample configuration :(far
     # whether to enable PWA support
     enable = true
     # service-worker version
-    version = "1.0.0"
+    version = "1.0.1"
 
   # {{< version 0.2.0 >}} App icon config
   [params.app]
@@ -785,7 +785,7 @@ Note that some of these parameters are explained in details in other sections of
 Default environments are `development` with `hugo serve` and `production` with `hugo`.
 
 Due to limitations in the local `development` environment,
-the **comment system**, **CDN** and **fingerprint** will not be enabled in the `development` environment.
+the **comment system**, **CDN**, **fingerprint** and **PWA** will not be enabled in the `development` environment.
 
 You could enable these features with `hugo serve -e production`.
 {{< /admonition >}}
