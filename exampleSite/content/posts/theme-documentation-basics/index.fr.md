@@ -35,10 +35,10 @@ Welcome to take the time to propose a translation by [:(fas fa-code-branch fa-fw
 
 Thanks to the simplicity of Hugo, [Hugo](https://gohugo.io/) is the only dependency of this theme.
 
-Just install latest version of [:(far fa-file-archive fa-fw): Hugo (> 0.84.0)](https://gohugo.io/getting-started/installing/) for your OS (**Windows**, **Linux**, **macOS**).
+Just install latest version of [:(far fa-file-archive fa-fw): Hugo (> 0.94.0)](https://gohugo.io/getting-started/installing/) for your OS (**Windows**, **Linux**, **macOS**).
 
 {{< admonition note "Why not support earlier versions of Hugo?" >}}
-Since [Markdown Render Hooks](https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks) was introduced in the [Hugo Christmas Edition](https://gohugo.io/news/0.62.0-relnotes/) and some of image resources are using webp which was introduced in [0.84.0](https://github.com/gohugoio/hugo/releases/tag/v0.84.0), this theme only supports Hugo versions above **0.84.0**.
+Since [Markdown Render Hooks](https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks) was introduced in the [Hugo Christmas Edition](https://gohugo.io/news/0.62.0-relnotes/) and some of image resources are using webp which was introduced in [0.94.0](https://github.com/gohugoio/hugo/releases/tag/v0.94.0), this theme only supports Hugo versions above **0.94.0**.
 {{< /admonition >}}
 
 {{< admonition tip "Hugo extended version is recommended" >}}
@@ -226,7 +226,7 @@ Please open the code block below to view the complete sample configuration :(far
     # whether to enable PWA support
     enable = true
     # service-worker version
-    version = "1.0.0"
+    version = "1.0.1"
 
   # {{< version 0.2.0 >}} App icon config
   [params.app]
@@ -321,6 +321,42 @@ Please open the code block below to view the complete sample configuration :(far
     dateFormat = "01-02"
     # amount of RSS pages
     rss = 10
+
+  # {{< version 1.0.2 >}}
+  [params.about]
+    # whether to enable profile on about page
+    # depends on .Site.Params.home.profile.enable
+    enable = true
+    # whether to enable param layout
+    param = true
+    # title for param layout
+    paramTitle = "Informations Personnelles"
+    # general description of your site
+    # can be write with markdown style
+    description = "[FeelIt](https://github.com/khusika/FeelIt) is a **clean**, **elegant** but **advanced** blog theme for [Hugo](https://gohugo.io/) developed by [Khusika](https://khusika.com). It is based on the original [LoveIt Theme](https://github.com/dillonzq/LoveIt), [LeaveIt Theme](https://github.com/liuzc/LeaveIt), and [KeepIt Theme](https://github.com/Fastbyte01/KeepIt)."
+    # description of your status
+    [[params.about.status]]
+      faIcon = "fas fa-building"
+      title = "Compagnie"
+      desc = "FeelIt"
+    [[params.about.status]]
+      faIcon = "fas fa-briefcase fa-fw"
+      title = "Occupation"
+      desc = "Indépendant"
+    [[params.about.status]]
+      title = "Lieu"
+      faIcon = "fas fa-map-marker-alt"
+      desc = "Terre"
+    # description of your parameter
+    [[params.about.parameter]]
+      language = "UI/UX"
+      level = "80"
+    [[params.about.parameter]]
+      language = "HTML"
+      level = "70"
+    [[params.about.parameter]]
+      language = "Go"
+      level = "60"
 
   # Home page config
   [params.home]
@@ -430,6 +466,7 @@ Please open the code block below to view the complete sample configuration :(far
     Bilibili = ""
     Email = "xxxx@xxxx.com"
     Resume = "" #goo.gl id {{< version 1.0.0 >}}
+    xda = "" {{< version 1.0.2 >}}
     RSS = true # {{< version 0.2.0 >}}
 
   # {{< version 0.2.0 changed >}} Page config
@@ -785,7 +822,7 @@ Note that some of these parameters are explained in details in other sections of
 Default environments are `development` with `hugo serve` and `production` with `hugo`.
 
 Due to limitations in the local `development` environment,
-the **comment system**, **CDN** and **fingerprint** will not be enabled in the `development` environment.
+the **comment system**, **CDN**, **fingerprint** and **PWA** will not be enabled in the `development` environment.
 
 You could enable these features with `hugo serve -e production`.
 {{< /admonition >}}
@@ -900,6 +937,9 @@ In `assets/css/_custom.scss`, you can add some css style code to customize the s
 | Serbian              | `sr`      | `sr`                  | :(far fa-square fa-fw):       | :(far fa-square fa-fw):       |
 | Vietnamese           | `vi`      | `vi`                  | :(far fa-square fa-fw):       | :(far fa-check-square fa-fw): |
 | Simplified Chinese   | `zh-cn`   | `zh-CN`               | :(far fa-check-square fa-fw): | :(far fa-check-square fa-fw): |
+| Hungarian            | `hu`      | `hu`                  | :(far fa-square fa-fw):       | :(far fa-square fa-fw):       |
+| Czech                | `cs`      | `cs`                  | :(far fa-square fa-fw):       | :(far fa-square fa-fw):       |
+| Persian              | `fa`      | `fa`                  | :(far fa-square fa-fw):       | :(far fa-square fa-fw):       |
 
 ### 4.2 Basic Configuration
 

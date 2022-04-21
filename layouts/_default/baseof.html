@@ -1,5 +1,9 @@
 {{- partial "init.html" . -}}
 
+{{- $params := .Scratch.Get "params" -}}
+{{- $pwa := .Scratch.Get "pwa" -}}
+{{- $offline := $params.offline -}}
+
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
     <head>
@@ -15,10 +19,11 @@
         {{- partial "head/seo.html" . -}}
 
         {{- $analytics := .Site.Config.Privacy.GoogleAnalytics -}}
-        {{- if not $analytics.Disable }}{{ with .Site.GoogleAnalytics -}}
-            {{ template "_internal/google_analytics.html" . }}
-        {{- end -}}{{ end -}}
+        {{- if and (not $analytics.Disable) (.Site.GoogleAnalytics) -}}
+            {{- template "_internal/google_analytics.html" . -}}
+        {{- end -}}
     </head>
+    {{- if ne $offline true -}}
     <body data-header-desktop="{{ .Site.Params.header.desktopMode }}" data-header-mobile="{{ .Site.Params.header.mobileMode }}">
         {{- /* Check theme isDark before body rendering */ -}}
         {{- $theme := .Site.Params.defaulttheme -}}
@@ -38,7 +43,7 @@
             {{- if ne .Site.Params.footer.enable false -}}
             {{- partial "footer.html" . -}}
             {{- end -}}
-            {{- if eq .Site.Params.pwa.enable true -}}
+            {{- if and (eq hugo.Environment "production") ($pwa.enable) -}}
             {{- partial "pwa.html" . -}}
             {{- end -}}
             </footer>
@@ -59,6 +64,22 @@
         </div>
 
         {{- /* Load JavaScript scripts and CSS */ -}}
-        {{- partial "assets.html" . -}}
+        {{- partial "assets.html" . | replaceRE `<script src="/sw.min.js"></script>` `` | safeHTML -}}
     </body>
+    {{- else if eq $offline true -}}
+    <body>
+        {{- /* Check theme isDark before body rendering */ -}}
+        {{- $theme := .Site.Params.defaulttheme -}}
+        <script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('{{ $theme }}' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '{{ $theme }}' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        {{- /* Body wrapper */ -}}
+        <div class="wrapper">
+            <main class="main">
+                <div class="container">
+                    {{- block "content" . }}{{ end -}}
+                </div>
+            </main>
+        </div>
+    </body>
+    {{- end -}}
 </html>

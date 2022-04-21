@@ -509,11 +509,28 @@ resume:
   Icon:
     Class: fas fa-user-circle fa-fw
 
-# 065: RSS
-rss:
+# 065: XDA-Developers
+xda:
   Weight: 65
+  Prefix: https://forum.xda-developers.com/m/
+  Title: XDA-Developers
+  Newtab: true
+  Icon:
+    Simpleicons: xdadevelopers
+
+# 066: RSS
+rss:
+  Weight: 66
   Url: /index.xml
   Title: RSS
   Newtab: true
   Icon:
     Class: fas fa-rss fa-fw
+
+# 067: Kaggle
+kaggle:
+  Weight: 67
+  Prefix: https://www.kaggle.com/
+  Title: Kaggle
+  Icon:
+    Class: fab fa-kaggle fa-fw

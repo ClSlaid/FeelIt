@@ -1,5 +1,7 @@
 {{- $cdn := .Scratch.Get "cdn" | default dict -}}
 {{- $fingerprint := .Scratch.Get "fingerprint" -}}
+{{- $params := .Scratch.Get "params" -}}
+{{- $offline := $params.offline -}}
 
 {{- if not .Site.Params.app.noFavicon -}}
     {{- with .Site.Params.app.svgFavicon -}}
@@ -17,6 +19,7 @@
 {{- end -}}
 
 <link rel="canonical" href="{{ .Permalink }}" />
+{{- if ne $offline true -}}
 {{- if .PrevInSection -}}
     <link rel="prev" href="{{ .PrevInSection.Permalink }}" />
 {{- end -}}
@@ -29,7 +32,25 @@
     <link rel="feed" href="{{ .RelPermalink }}" type="application/rss+xml" title="{{ $.Site.Title }}">
 {{- end -}}
 
+
 {{- if not .IsHome -}}
+
+{{- $aboutPage := site.GetPage "/about" -}}
+{{- if eq .Page $aboutPage -}}
+{{- /* about.min.css */ -}}
+{{- if .Site.Params.SourceMap -}}
+{{- $style := dict "Source" "css/about.scss" "Fingerprint" $fingerprint -}}
+{{- $options := dict "targetPath" "css/about.min.css" "enableSourceMap" true -}}
+{{- $style = dict "Context" . "ToCSS" $options | merge $style -}}
+{{- partial "plugin/style.html" $style -}}
+{{- else -}}
+{{- $style := dict "Source" "css/about.scss" "Fingerprint" $fingerprint -}}
+{{- $options := dict "targetPath" "css/about.min.css" "enableSourceMap" false -}}
+{{- $style = dict "Context" . "ToCSS" $options | merge $style -}}
+{{- partial "plugin/style.html" $style -}}
+{{- end -}}
+{{ end }}
+
 {{- /* page.min.css */ -}}
 {{- if .Site.Params.SourceMap -}}
 {{- $style := dict "Source" "css/page.scss" "Fingerprint" $fingerprint -}}
@@ -41,6 +62,7 @@
 {{- $options := dict "targetPath" "css/page.min.css" "enableSourceMap" false -}}
 {{- $style = dict "Context" . "ToCSS" $options | merge $style -}}
 {{- partial "plugin/style.html" $style -}}
+{{- end -}}
 {{- end -}}
 {{- end -}}
 
@@ -57,6 +79,7 @@
 {{- partial "plugin/style.html" $style -}}
 {{- end -}}
 
+{{- if ne $offline true -}}
 {{- $analytics := .Site.Config.Privacy.GoogleAnalytics -}}
 {{- if not $analytics.Disable }}{{ with .Site.GoogleAnalytics -}}
     {{ if hasPrefix . "G-"}}
@@ -67,3 +90,4 @@
         <link rel="dns-prefetch" href="https://www.google-analytics.com">
     {{- end -}}
 {{- end -}}{{ end -}}
+{{- end -}}

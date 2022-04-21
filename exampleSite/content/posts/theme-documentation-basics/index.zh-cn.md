@@ -30,10 +30,10 @@ toc:
 
 由于 Hugo 提供的便利性, [Hugo](https://gohugo.io/) 本身是这个主题唯一的依赖.
 
-直接安装满足你操作系统 (**Windows**, **Linux**, **macOS**) 的最新版本 [:(far fa-file-archive fa-fw): Hugo (> 0.84.0)](https://gohugo.io/getting-started/installing/).
+直接安装满足你操作系统 (**Windows**, **Linux**, **macOS**) 的最新版本 [:(far fa-file-archive fa-fw): Hugo (> 0.94.0)](https://gohugo.io/getting-started/installing/).
 
 {{< admonition note "为什么不支持早期版本的 Hugo?" >}}
-由于 [Markdown 渲染钩子函数](https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks) 在 [Hugo 圣诞节版本](https://gohugo.io/news/0.62.0-relnotes/) 中被引入 一些图像资源使用的是[0.84.0](https://github.com/gohugoio/hugo/releases/tag/v0.84.0)中引入的webp, 本主题只支持高于 **0.84.0** 的 Hugo 版本.
+由于 [Markdown 渲染钩子函数](https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks) 在 [Hugo 圣诞节版本](https://gohugo.io/news/0.62.0-relnotes/) 中被引入 一些图像资源使用的是[0.94.0](https://github.com/gohugoio/hugo/releases/tag/v0.94.0)中引入的webp, 本主题只支持高于 **0.94.0** 的 Hugo 版本.
 {{< /admonition >}}
 
 {{< admonition tip "推荐使用 Hugo extended 版本" >}}
@@ -224,7 +224,7 @@ hugo
     # whether to enable PWA support
     enable = true
     # service-worker version
-    version = "1.0.0"
+    version = "1.0.1"
 
   # {{< version 0.2.0 >}} 应用图标配置
   [params.app]
@@ -319,6 +319,43 @@ hugo
     dateFormat = "01-02"
     # RSS 文章数目
     rss = 10
+
+  # {{< version 1.0.2 >}}
+  # 关于页面配置
+  [params.about]
+    # 是否启用关于页面的配置文件
+    # 依赖于取决于 .Site.Params.home.profile.enable
+    enable = true
+    # 是否启用参数布局
+    param = true
+    # 参数布局的标题
+    paramTitle = "个人信息"
+    # 您网站的一般描述
+    # 可以用markdown样式写
+    description = "[FeelIt](https://github.com/khusika/FeelIt) 是一个由 [Khusika](https://khusika.com) 开发的**简洁**、**优雅**且**高效**的 [Hugo](https://gohugo.io/) 博客主题。 它的原型基于 [LoveIt 主题](https://github.com/dillonzq/LoveIt), [LeaveIt 主题](https://github.com/liuzc/LeaveIt), 和 [KeepIt 主题](https://github.com/Fastbyte01/KeepIt)。"
+    # 你的状态描述
+    [[params.about.status]]
+      faIcon = "fas fa-building"
+      title = "公司"
+      desc = "FeelIt"
+    [[params.about.status]]
+      faIcon = "fas fa-briefcase fa-fw"
+      title = "职业"
+      desc = "自由职业者"
+    [[params.about.status]]
+      title = "地点"
+      faIcon = "fas fa-map-marker-alt"
+      desc = "地球"
+    # 参数说明
+    [[params.about.parameter]]
+      language = "UI/UX"
+      level = "80"
+    [[params.about.parameter]]
+      language = "HTML"
+      level = "70"
+    [[params.about.parameter]]
+      language = "Go"
+      level = "60"
 
   # 主页配置
   [params.home]
@@ -428,6 +465,7 @@ hugo
     Bilibili = ""
     Email = "xxxx@xxxx.com"
     Resume = "" #goo.gl id {{< version 1.0.0 >}}
+    xda = "" {{< version 1.0.2 >}}
     RSS = true # {{< version 0.2.0 >}}
 
   # {{< version 0.2.0 changed >}} 文章页面配置
@@ -786,7 +824,7 @@ hugo
 而 `hugo` 的默认运行环境是 `production`.
 
 由于本地 `development` 环境的限制,
-**评论系统**, **CDN** 和 **fingerprint** 不会在 `development` 环境下启用.
+**评论系统**, **CDN**, **fingerprint** 和 **PWA** 不会在 `development` 环境下启用.
 
 你可以使用 `hugo serve -e production` 命令来开启这些特性.
 {{< /admonition >}}
@@ -901,6 +939,7 @@ $code-font-family: Fira Mono, Source Code Pro, Menlo, Consolas, Monaco, monospac
 | 塞尔维亚语 | `sr` | `sr` | :(far fa-square fa-fw): | :(far fa-square fa-fw): |
 | 越南语 | `vi` | `vi` | :(far fa-square fa-fw): | :(far fa-check-square fa-fw): |
 | 简体中文 | `zh-cn` | `zh-CN` | :(far fa-check-square fa-fw): | :(far fa-check-square fa-fw): |
+| 波斯语 | `fa` | `fa` | :(far fa-square fa-fw): | :(far fa-square fa-fw): |
 
 ### 4.2 基本配置
 

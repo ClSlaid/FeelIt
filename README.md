@@ -2,7 +2,7 @@
 
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/khusika/FeelIt?style=flat-square)](https://github.com/khusika/FeelIt/releases)
-[![Hugo](https://img.shields.io/badge/Hugo-%5E0.84.0-ff4088?style=flat-square&logo=hugo)](https://gohugo.io/)
+[![Hugo](https://img.shields.io/badge/Hugo-%5E0.94.0-ff4088?style=flat-square&logo=hugo)](https://gohugo.io/)
 [![License](https://img.shields.io/github/license/khusika/FeelIt?style=flat-square)](https://github.com/khusika/FeelIt/blob/main/LICENSE)
 
 > **FeelIt** is a **clean**, **elegant** but **advanced** blog theme for [Hugo](https://gohugo.io/).
@@ -12,7 +12,7 @@ It is based on the original [LoveIt Theme](https://github.com/dillonzq/LoveIt), 
 Since the three themes have a similar look, if you have questions about their differences,
 read [Why choose FeelIt](#why-choose-feelit) so that you can choose the one that works best for you.
 
-![Hugo Theme FeelIt](https://github.com/khusika/FeelIt/raw/main/images/Apple-Devices-Preview.webp)
+![Hugo Theme FeelIt](https://github.com/khusika/FeelIt/raw/main/images/screenshot.png)
 
 ## Demo Site
 
@@ -122,7 +122,7 @@ I hope you will FeelIt ❤️!
 
 * ### [Theme Documentation - Built in Shortcodes](https://feelit.khusika.com/theme-documentation-built-in-shortcodes/)
 
-* ### [Theme Documentation - Extended Shortocodes](https://feelit.khusika.com/theme-documentation-extended-shortcodes/)
+* ### [Theme Documentation - Extended Shortcodes](https://feelit.khusika.com/theme-documentation-extended-shortcodes/)
 
 * ### [Basic Markdown Syntax](https://feelit.khusika.com/basic-markdown-syntax/)
 
@@ -162,6 +162,9 @@ FeelIt supports the following languages:
 * Serbian
 * Vietnamese
 * Simplified Chinese
+* Hungarian
+* Czech
+* Persian
 * [Contribute with a new language](https://github.com/khusika/FeelIt/pulls)
 
 [Languages Compatibility](https://feelit.khusika.com/theme-documentation-basics/#language-compatibility)
