@@ -2,7 +2,7 @@
 
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/khusika/FeelIt?style=flat-square)](https://github.com/khusika/FeelIt/releases)
-[![Hugo](https://img.shields.io/badge/Hugo-%5E0.94.0-ff4088?style=flat-square&logo=hugo)](https://gohugo.io/)
+[![Hugo](https://img.shields.io/badge/Hugo-%5E0.110.0-ff4088?style=flat-square&logo=hugo)](https://gohugo.io/)
 [![License](https://img.shields.io/github/license/khusika/FeelIt?style=flat-square)](https://github.com/khusika/FeelIt/blob/main/LICENSE)
 
 > **FeelIt** is a **clean**, **elegant** but **advanced** blog theme for [Hugo](https://gohugo.io/).
@@ -165,6 +165,7 @@ FeelIt supports the following languages:
 * Hungarian
 * Czech
 * Persian
+* Ukrainian
 * [Contribute with a new language](https://github.com/khusika/FeelIt/pulls)
 
 [Languages Compatibility](https://feelit.khusika.dev/theme-documentation-basics/#language-compatibility)

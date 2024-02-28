@@ -4,10 +4,10 @@ baseURL = "https://example.com"
 defaultContentLanguage = "en"
 # theme
 # 主题
-theme = "./"
+theme = ""
 # themes directory
 # 主题目录
-themesDir = "../.."
+themesDir = "../"
 
 # website title
 # 网站标题
@@ -23,9 +23,10 @@ enableGitInfo = true
 # 是否使用 emoji 代码
 enableEmoji = true
 # UA-PROPERTY_ID or G-MEASUREMENT_ID google analytics code
+# UA-PROPERTY_ID 或者是 G-MEASUREMENT_ID 的 google analytics 代码
 googleAnalytics = ""
 
-ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstoken"]
+ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstoken", "error-remote-getjson"]
 
 [languages]
   [languages.en]
@@ -87,7 +88,7 @@ ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstok
         weight = 5
       [[languages.en.menu.main]]
         identifier = "github"
-        pre = "<i class='fab fa-github fa-fw'></i>"
+        pre = "<i class='fa-brands fa-github fa-fw'></i>"
         post = ""
         name = ""
         url = "https://github.com/khusika/FeelIt"
@@ -148,16 +149,16 @@ ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstok
         description = "[FeelIt](https://github.com/khusika/FeelIt) is a **clean**, **elegant** but **advanced** blog theme for [Hugo](https://gohugo.io/) developed by [Khusika](https://khusika.dev). It is based on the original [LoveIt Theme](https://github.com/dillonzq/LoveIt), [LeaveIt Theme](https://github.com/liuzc/LeaveIt), and [KeepIt Theme](https://github.com/Fastbyte01/KeepIt)."
         # description of your status
         [[languages.en.params.about.status]]
-          faIcon = "fas fa-building"
+          faIcon = "fa-solid fa-building"
           title = "Company"
           desc = "FeelIt"
         [[languages.en.params.about.status]]
-          faIcon = "fas fa-briefcase fa-fw"
+          faIcon = "fa-solid fa-briefcase fa-fw"
           title = "Occupation"
           desc = "Freelancer"
         [[languages.en.params.about.status]]
           title = "Location"
-          faIcon = "fas fa-map-marker-alt"
+          faIcon = "fa-solid fa-map-marker-alt"
           desc = "Earth"
         # description of your parameter
         [[languages.en.params.about.parameter]]
@@ -256,7 +257,7 @@ ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstok
         weight = 5
       [[languages.zh-cn.menu.main]]
         identifier = "github"
-        pre = "<i class='fab fa-github fa-fw'></i>"
+        pre = "<i class='fa-brands fa-github fa-fw'></i>"
         post = ""
         name = ""
         url = "https://github.com/khusika/FeelIt"
@@ -317,16 +318,16 @@ ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstok
         description = "[FeelIt](https://github.com/khusika/FeelIt) 是一个由 [Khusika](https://khusika.dev) 开发的**简洁**、**优雅**且**高效**的 [Hugo](https://gohugo.io/) 博客主题。 它的原型基于 [LoveIt 主题](https://github.com/dillonzq/LoveIt), [LeaveIt 主题](https://github.com/liuzc/LeaveIt), 和 [KeepIt 主题](https://github.com/Fastbyte01/KeepIt)。"
         # 你的状态描述
         [[languages.zh-cn.params.about.status]]
-          faIcon = "fas fa-building"
+          faIcon = "fa-solid fa-building"
           title = "公司"
           desc = "FeelIt"
         [[languages.zh-cn.params.about.status]]
-          faIcon = "fas fa-briefcase fa-fw"
+          faIcon = "fa-solid fa-briefcase fa-fw"
           title = "职业"
           desc = "自由职业者"
         [[languages.zh-cn.params.about.status]]
           title = "地点"
-          faIcon = "fas fa-map-marker-alt"
+          faIcon = "fa-solid fa-map-marker-alt"
           desc = "地球"
         # 参数说明
         [[languages.zh-cn.params.about.parameter]]
@@ -423,7 +424,7 @@ ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstok
         weight = 5
       [[languages.fr.menu.main]]
         identifier = "github"
-        pre = "<i class='fab fa-github fa-fw'></i>"
+        pre = "<i class='fa-brands fa-github fa-fw'></i>"
         post = ""
         name = ""
         url = "https://github.com/khusika/FeelIt"
@@ -484,16 +485,16 @@ ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstok
         description = "[FeelIt](https://github.com/khusika/FeelIt) is a **clean**, **elegant** but **advanced** blog theme for [Hugo](https://gohugo.io/) developed by [Khusika](https://khusika.dev). It is based on the original [LoveIt Theme](https://github.com/dillonzq/LoveIt), [LeaveIt Theme](https://github.com/liuzc/LeaveIt), and [KeepIt Theme](https://github.com/Fastbyte01/KeepIt)."
         # description of your status
         [[languages.fr.params.about.status]]
-          faIcon = "fas fa-building"
+          faIcon = "fa-solid fa-building"
           title = "Compagnie"
           desc = "FeelIt"
         [[languages.fr.params.about.status]]
-          faIcon = "fas fa-briefcase fa-fw"
+          faIcon = "fa-solid fa-briefcase fa-fw"
           title = "Occupation"
           desc = "Indépendant"
         [[languages.fr.params.about.status]]
           title = "Lieu"
-          faIcon = "fas fa-map-marker-alt"
+          faIcon = "fa-solid fa-map-marker-alt"
           desc = "Terre"
         # description of your parameter
         [[languages.fr.params.about.parameter]]
@@ -555,14 +556,18 @@ ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstok
   # 网站图片, 用于 Open Graph 和 Twitter Cards
   images = ["/logo.png"]
   # whether to enable CSS and JS source mapping
+  # 是否要开启 CSS 和 JS 资源映射
   SourceMap = false
 
   # PWA config
+  # PWA 配置
   [params.pwa]
     # whether to enable PWA support
+    # 是否要启用 PWA
     enable = true
     # service-worker version
-    version = "1.0.1"
+    # service-worker 版本
+    version = "1.0.2"
 
   # Header config
   # 页面头部导航栏配置
@@ -584,7 +589,7 @@ ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstok
       name = "FeelIt"
       # you can add extra information before the name (HTML format is supported), such as icons
       # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
-      pre = "<i class='fas fa-hand-holding-heart fa-fw'></i>"
+      pre = "<i class='fa-solid fa-hand-holding-heart fa-fw'></i>"
       # you can add extra information after the name (HTML format is supported), such as icons
       # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
       post = ""
@@ -648,11 +653,14 @@ ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstok
     rss = 10
 
   # oEmbed config for Facebook and Instagram
+  # oEmbed 配置，用于 Facebook 和 Instagram
   [params.oembed]
     # Privacy config (https://gohugo.io/about/hugo-and-gdpr/)
+    # 隐私设置 (https://gohugo.io/about/hugo-and-gdpr/)
     privacy = false
     [params.oembed.facebook]
-      # Facebook Aplication Identity and Client Token (<APPID>|<CLIENTTOKEN>)
+      # Facebook Application Identity and Client Token (<APPID>|<CLIENTTOKEN>)
+      # Facebook 的 Application Identity 和 Client Token (<APPID>|<CLIENTTOKEN>)
       accessToken = ""
     [params.oembed.twitter]
       enableDNT = false
@@ -967,6 +975,8 @@ ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstok
     Email = "xxxx@xxxx.com"
     Resume = "" #goo.gl id
     xda = ""
+    kaggle = ""
+    discord = ""
     RSS = true
     [params.social.Mastodon]
       id = "@xxxx"
@@ -1012,14 +1022,17 @@ ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstok
   [params.analytics]
     enable = false
     # Fathom Analytics
+    # Fathom 分析
     [params.analytics.fathom]
       id = ""
       # server url for your tracker if you're self hosting
       # 自行托管追踪器时的主机路径
       server = ""
     # GoatCounter Analytics
+    # GoatCounter 分析
     [params.analytics.goatcounter]
       # GoatCounter code
+      # GoatCounter 代码
       code = ""
 
   # Cookie consent config
@@ -1123,6 +1136,7 @@ ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstok
     respectDoNotTrack = false
     useSessionStorage = false
   # privacy of the Intagram (replaced by params.oembed.instagram)
+  # Instagram 相关隐私 (被替换为 params.oembed.instagram)
   [privacy.instagram]
     # ...
   [privacy.twitter]
@@ -1149,5 +1163,5 @@ ignoreErrors = ["err-missing-comment-accesstoken", "err-missing-oembed-accesstok
   home = ["HTML", "RSS", "JSON"]
   page = ["HTML", "MarkDown"]
   section = ["HTML", "RSS"]
-  taxonomy = ["HTML", "RSS"]
-  taxonomyTerm = ["HTML"]
+  term = ["HTML", "RSS"]
+  taxonomy = ["HTML"]
