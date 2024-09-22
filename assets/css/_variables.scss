@@ -2,7 +2,9 @@
 // Variables
 // ==============================
 @import url("https://fonts.cdnfonts.com/css/linux-libertine-o");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Noto+Serif+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Noto+Sans+SC&display=swap");
 
 // ========== Global ========== //
 // Font and Line Height
@@ -24,7 +26,7 @@ $global-font-family: system-ui,
   sans-serif !default;
 $global-font-size: 18px;
 $global-font-weight: 390;
-$global-line-height: 1.8rem;
+$global-line-height: 1.5rem;
 
 // Color of the background
 $global-background-color: #f2f2f2 !default;
@@ -98,6 +100,8 @@ $search-background-color-dark: #363636 !default;
 // content font family
 $single-font-family: "Linux Libertine O", "Noto Serif CJK SC",
   $global-font-family !default;
+$single-font-family-dark: "Manrope", "Noto Sans CJK SC", $global-font-family !default;
+
 // Font size of the TOC
 $toc-title-font-size: 1rem !default;
 $toc-content-font-size: 0.9rem !default;

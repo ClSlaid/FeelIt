@@ -3,30 +3,36 @@
 .single-card {
   padding: 1rem;
   margin: 1rem 0 0;
-  @include border-radius(.5rem);
+  @include border-radius(0.5rem);
   @include box-shadow(0 2px 4px -1px rgba(0, 0, 0, 0.2));
   background-color: $global-background-card-color;
-  [theme=dark] & {
+
+  [theme="dark"] & {
     background-color: $global-background-card-color-dark;
   }
-  &[data-image=true] {
+
+  &[data-image="true"] {
     margin-top: 0;
-    @include border-radius(0 0 .5rem .5rem);
+    @include border-radius(0 0 0.5rem 0.5rem);
   }
 }
 
 .single {
   font-family: $single-font-family;
 
+  [theme="dark"] & {
+    font-family: $single-font-family-dark;
+  }
+
   .single-title {
-    margin: .5rem 0;
+    margin: 0.5rem 0;
     font-size: 1.6rem;
     font-weight: bold;
     line-height: 140%;
   }
 
   .single-subtitle {
-    margin: .4rem 0;
+    margin: 0.4rem 0;
     font-size: 1.2rem;
     font-weight: normal;
     font-style: italic;
@@ -34,14 +40,14 @@
   }
 
   .post-meta {
-    font-size: .875rem;
+    font-size: 0.875rem;
     color: $global-font-secondary-color;
 
     span {
       display: inline-block;
     }
 
-    [theme=dark] & {
+    [theme="dark"] & {
       color: $global-font-secondary-color-dark;
     }
 
@@ -61,7 +67,7 @@
       height: auto;
       margin: 0 auto;
       overflow: hidden;
-      @include border-radius(.5rem .5rem 0 0);
+      @include border-radius(0.5rem 0.5rem 0 0);
     }
 
     img.lazyloaded {
@@ -70,7 +76,7 @@
   }
 
   .content {
-    > h2 {
+    >h2 {
       font-size: 1.5rem;
 
       & code {
@@ -78,7 +84,7 @@
       }
     }
 
-    > h3 {
+    >h3 {
       font-size: 1.375rem;
 
       & code {
@@ -86,7 +92,7 @@
       }
     }
 
-    > h4 {
+    >h4 {
       font-size: 1.25rem;
 
       & code {
@@ -94,11 +100,11 @@
       }
     }
 
-    > h5 {
+    >h5 {
       font-size: 1.125rem;
     }
 
-    > h6 {
+    >h6 {
       font-size: 1rem;
     }
 
@@ -110,39 +116,40 @@
       font-weight: bold;
       margin: 1.2rem 0;
 
-      [theme=dark] & {
+      [theme="dark"] & {
         font-weight: bolder;
       }
     }
 
-    > h2,
-    > h3,
-    > h4,
-    > h5,
-    > h6 {
-      > .header-mark::before {
+    >h2,
+    >h3,
+    >h4,
+    >h5,
+    >h6 {
+      >.header-mark::before {
         content: "|";
-        margin-right: .3125rem;
+        margin-right: 0.3125rem;
         color: $single-link-color;
 
-        [theme=dark] & {
+        [theme="dark"] & {
           color: $single-link-color-dark;
         }
       }
     }
 
-    > h2 > .header-mark::before {
+    >h2>.header-mark::before {
       content: "#";
     }
 
     p {
-      margin: .5rem 0;
+      margin: 0.5rem 0;
     }
 
-    b, strong {
+    b,
+    strong {
       font-weight: bold;
 
-      [theme=dark] & {
+      [theme="dark"] & {
         color: #ddd;
       }
     }
@@ -152,17 +159,20 @@
     a {
       @include overflow-wrap(break-word);
 
-      [theme=dark] & b, [theme=dark] & strong {
+      [theme="dark"] & b,
+      [theme="dark"] & strong {
         color: $single-link-color-dark;
       }
     }
 
-    [theme=dark] a:hover b, [theme=dark] a:hover strong {
+    [theme="dark"] a:hover b,
+    [theme="dark"] a:hover strong {
       color: $single-link-hover-color-dark;
     }
 
-    ul, ol {
-      margin: .5rem 0;
+    ul,
+    ol {
+      margin: 0.5rem 0;
       padding-left: 2rem;
     }
 
@@ -177,7 +187,7 @@
         color: $global-font-secondary-color;
       }
 
-      [theme=dark] & {
+      [theme="dark"] & {
         background: $code-background-color-dark;
 
         rt {
@@ -192,36 +202,37 @@
       &::-webkit-scrollbar {
         background-color: $table-background-color;
 
-        [theme=dark] & {
+        [theme="dark"] & {
           background-color: $table-background-color-dark;
         }
       }
 
-      > table {
+      >table {
         width: 100%;
         max-width: 100%;
-        margin: .625rem 0;
+        margin: 0.625rem 0;
         border-spacing: 0;
         background: $table-background-color;
         border-collapse: collapse;
 
-        [theme=dark] & {
+        [theme="dark"] & {
           background: $table-background-color-dark;
         }
 
         thead {
           background: $table-thead-color;
 
-          [theme=dark] & {
+          [theme="dark"] & {
             background-color: $table-thead-color-dark;
           }
         }
 
-        th, td {
-          padding: .3rem 1rem;
+        th,
+        td {
+          padding: 0.3rem 1rem;
           border: 1px solid darken($table-thead-color, 2%);
 
-          [theme=dark] & {
+          [theme="dark"] & {
             border-color: darken($table-thead-color-dark, 2%);
           }
         }
@@ -234,16 +245,16 @@
     }
 
     figure {
-      margin: .5rem;
+      margin: 0.5rem;
       text-align: center;
 
       .image-caption:not(:empty) {
         min-width: 20%;
         max-width: 80%;
         display: inline-block;
-        padding: .5rem;
+        padding: 0.5rem;
         margin: 0 auto;
-        font-size: .875rem;
+        font-size: 0.875rem;
         color: #969696;
       }
 
@@ -261,26 +272,26 @@
 
     blockquote {
       display: block;
-      border-left: .5rem solid $blockquote-color;
-      background-color: rgba($blockquote-color, .2);
-      padding: .25rem .75rem;
+      border-left: 0.5rem solid $blockquote-color;
+      background-color: rgba($blockquote-color, 0.2);
+      padding: 0.25rem 0.75rem;
       margin: 1rem 0;
 
-      [theme=dark] & {
+      [theme="dark"] & {
         border-left-color: $blockquote-color-dark;
-        background-color: rgba($blockquote-color-dark, .2);
+        background-color: rgba($blockquote-color-dark, 0.2);
       }
     }
 
     .footnotes {
       color: $global-font-secondary-color;
 
-      [theme=dark] & {
+      [theme="dark"] & {
         color: $global-font-secondary-color-dark;
       }
 
       p {
-        margin: .25rem 0;
+        margin: 0.25rem 0;
       }
     }
 
@@ -301,24 +312,24 @@
       border-top: 1px dashed $global-border-color;
       border-bottom: none;
 
-      [theme=dark] & {
+      [theme="dark"] & {
         border-top-color: $global-border-color-dark;
       }
     }
 
     kbd {
       display: inline-block;
-      padding: .25rem;
+      padding: 0.25rem;
       background-color: $global-background-color;
       border: 1px solid $global-border-color;
       border-bottom-color: $global-border-color;
       @include border-radius(3px);
       @include box-shadow(inset 0 -1px 0 $global-border-color);
-      font-size: .8rem;
+      font-size: 0.8rem;
       font-family: $code-font-family;
       color: $code-color;
 
-      [theme=dark] & {
+      [theme="dark"] & {
         background-color: $global-background-color-dark;
         border-color: $global-border-color-dark;
         border-bottom-color: $global-border-color-dark;
@@ -329,8 +340,8 @@
 
     .typeit {
       .code {
-        padding: .375rem;
-        font-size: .875rem;
+        padding: 0.375rem;
+        font-size: 0.875rem;
         font-family: $code-font-family;
         font-weight: bold;
         word-break: break-all;
